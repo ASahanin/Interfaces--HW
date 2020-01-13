@@ -1,22 +1,25 @@
 package interfaces;
 
-public class Monkey extends Animal implements Climable, Sit, EatFruits{
+public class Monkey extends Animal implements Climable{
     public Monkey(String name, int age, double weight) {
         super(name, age, weight);
     }
+    private Climable climable;
 
     @Override
     public void climb() {
-        System.out.println("I can climb!");
+        System.out.println("Monkey can climb.");
     }
 
-    @Override
-    public void sit() {
-        System.out.println("I can sit on a back of an another animal!");
+    public void eat(Eatable eatable){
+        System.out.println("I like eat " + eatable.getName() + ".");
     }
 
-    @Override
-    public void eatFruits() {
-        System.out.println("I can eat fruits!");
+    public Climable getClimable() {
+        return climable;
+    }
+
+    public void setClimable(Climable climable) {
+        this.climable = climable;
     }
 }
